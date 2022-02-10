@@ -3,3 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+.maincontainer {
+  background-color: rgb(141, 167, 253);
+  height: 98vh;
+}
