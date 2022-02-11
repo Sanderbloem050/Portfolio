@@ -1,15 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/Home";
-import Header from "./Components/Header/Header";
 import "./index.css";
+import Header from "./Components/Header";
+import Section from "./Components/Section";
+import Info from "./Components/Info";
+import Testimonials from "./Components/Testimonials";
 
 function App() {
   return (
-    <div className="maincontainer">
+    <div className="App">
       <Header />
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-      </Routes>
+      <Section />
+      <Info />
+      <Testimonials />
     </div>
   );
 }
