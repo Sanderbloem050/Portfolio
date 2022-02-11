@@ -4,33 +4,33 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- main
+  - main
 
 variables:
-  uiSource: 'src'
-  uiBuild: '$(uiSource)/build'
+  uiSource: "src"
+  uiBuild: "$(uiSource)build"
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "10.x"
+    displayName: "Install Node.js"
 
-- script: |
-    push $(uiSource)
-    npm install
-    npm run build
-    popd
-  displayName: 'npm install and build'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+  - script: |
+      push $(uiSource)
+      npm install
+      npm run build
+      popd
+    displayName: "npm install and build"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      ArtifactName: "drop"
+      publishLocation: "Container"
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '14.x'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "14.x"
