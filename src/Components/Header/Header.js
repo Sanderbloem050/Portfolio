@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <h1>Sander Bloem</h1>
+        <h1>Welkom Sander Bloem</h1>
       </div>
       <div className={classes.socials}>
         <button>GitHub</button>
